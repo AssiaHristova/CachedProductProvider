@@ -8,9 +8,9 @@ public class CachedProductProvider implements ProductProvider {
     public CachedProductProvider(MainframeProductProvider mainframeProductProvider) {
         this.mainframeProductProvider = mainframeProductProvider;
     }
-    public ConcurrentHashMap<String, Object> cachedProductIdMap = new ConcurrentHashMap<>();
+    public ReadWriteConcurrentHashMap<String, Object> cachedProductIdMap = new ReadWriteConcurrentHashMap<>();
 
-    public int getMapSize(ConcurrentHashMap<String, Object> cachedProductIdMap){
+    public int getMapSize(ReadWriteConcurrentHashMap<String, Object> cachedProductIdMap){
         return cachedProductIdMap.size();
     }
 
